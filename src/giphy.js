@@ -1,9 +1,5 @@
 import axios from 'axios';
-
-const APIKEY = process.env.REACT_APP_GIPHY_API_KEY; 
-const TRENDING_URL = `https://api.giphy.com/v1/gifs/trending?api_key=${APIKEY}&limit=10&rating=PG-13`;
-
-
+import { TRENDING_URL } from './utils/constants';
 /**
  * Fetches 10 trending gifs from gip '/trending' endpoint
  * 
