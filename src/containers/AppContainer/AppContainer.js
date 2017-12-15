@@ -8,14 +8,15 @@ import TrendingList from '../../components/TrendingList/TrendingList';
 import Search from '../../components/Search/Search';
 
 
-
 class AppContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      trending: []
+      trending: [],
+      searchResults: []
     }
   }
+
   componentDidMount() {
     returnTrendingGifs()
     .then((trendingGifs) => {
@@ -25,6 +26,7 @@ class AppContainer extends Component {
     })
     .catch(e => console.log(e)); 
   }
+
   render() {
     const { trending } = this.state;
     return (
