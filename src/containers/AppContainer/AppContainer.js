@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { Container } from 'semantic-ui-react';
 import { returnTrendingGifs } from '../../giphy';
-import TrendingList from '../../components/TrendingList/TrendingList';
 import './AppContainer.css';
+
+import Header from '../../components/Header/Header';
+import TrendingList from '../../components/TrendingList/TrendingList';
+import Search from '../../components/Search/Search';
+
 
 
 class AppContainer extends Component {
@@ -25,12 +29,11 @@ class AppContainer extends Component {
     const { trending } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Giphy Api</h1>
-        </header>
-
+        <Header />
+        <Search />
         { this.state.trending.length ? 
           <Container>
+            <h3> Top Trending Giphys </h3>
             <TrendingList trendingGifs={trending} />
           </Container>
           :
