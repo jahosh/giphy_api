@@ -3,6 +3,8 @@ import { Card, Icon, Image, Button } from 'semantic-ui-react';
 
 const TrendingListItem = ({ gif, count }) => {
   const gifImage = gif.images.fixed_width.url;
+  const trendingTime = gif.trending_datetime;
+  const url = gif.url;
 
   return (
       <Card>
@@ -13,11 +15,11 @@ const TrendingListItem = ({ gif, count }) => {
       </Card.Header>
           <Card.Meta>
             <span className='date'>
-              trending since: {gif.trending_datetime}
+              trending since: {trendingTime}
         </span>
           </Card.Meta>
           <Card.Description>
-            <a href={gif.url} target="_blank" rel="noopener noreferrer">
+            <a href={url} target="_blank" rel="noopener noreferrer">
               <Button color='blue'>
                 Link
               </Button>
