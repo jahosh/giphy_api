@@ -29,7 +29,7 @@ export function returnTrendingGifs() {
  */
 export function returnSearchResults(searchTerm) {
   return new Promise((resolve, reject) => {
-    axios.get(SEARCH_URL)
+    axios.get(`${SEARCH_URL}&q=${searchTerm}`)
       .then(resp => {
         if (resp.status === 200) {
           resolve(resp.data.data)

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon, Image, Button } from 'semantic-ui-react';
+import { Card, Image, Button } from 'semantic-ui-react';
 
 const TrendingListItem = ({ gif, count }) => {
   const gifImage = gif.images.fixed_width.url;
